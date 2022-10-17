@@ -1,0 +1,13 @@
+{ 
+ "productId":1234,
+ "pricepointId":5678,
+ "mcc":"420",
+ "mnc":"03",
+ "text":"MESSAGE TO BE SENT TO USER",
+ "msisdn": "XXXXXXXXXXX(FAKE_MSISDN)",
+ "largeAccount":"XXXX(SHORTCODE)",
+ "priority":"NORMAL",
+ "timezone":"Asia/Riyadh",
+ "context":"STATELESS",
+ "mtType":"TEXT"
+}
