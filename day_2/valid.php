@@ -37,7 +37,7 @@ if(isset($_POST['submits']))
         $_SESSION["filen"]=$main_file_name;
         }
         //echo "correct";
-        //header("refresh:0;url=display.php");
+        header("refresh:0;url=display.php");
 	}
 else
 	echo "No inputs ";
