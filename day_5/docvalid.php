@@ -28,13 +28,14 @@
    
       //if file is alreday at destination location
       if(file_exists($destination)){
-      $new_file_name="saurabh"."_".time().$file_name;   //change file name
+      $new_file_name="new"."_".time().$file_name;   //change file name
       $destination ="uploads/".$new_file_name;  //destination
        }
 
       //if File Uploaded successfully
        if(move_uploaded_file($file_tmp,$destination)){
         echo "success! File Uploaded successfully.";
+        $file=$destination;
       }  
       else{
         echo "OOPS! File could not be Uploaded.";
@@ -45,6 +46,7 @@
    else{
       echo "<pre>";
       print_r($errors);
+      //header("refresh:3;url=index.html");
     }
     
  

@@ -15,6 +15,7 @@
                 <td>Password</td>
                 <td>Gender</td>
                 <td>Country</td>
+                <td>file</td>
                 
                 </tr>
             </thead>
@@ -34,8 +35,8 @@ $age=$_SESSION['age'];
 $email=$_SESSION['email'];
 $gender=$_SESSION['gender'];
 $country=$_SESSION['country'];
-$filepath=$_SESSION['filep'];
-$filename=$_SESSION['filen'];
+$file=$_SESSION['file'];
+//$filename=$_SESSION['filen'];
 session_destroy();
 
 
@@ -49,7 +50,7 @@ session_destroy();
 
 
 $cons= new mysqli("localhost","root","","pheuture") or die("error in db".mysql_connect_error());
-$cons->query("insert into form (name,password,age,email,gender,country) values ('$name','$pass','$age','$email','$gender','$country')");
+$cons->query("insert into form (name,password,age,email,gender,country,file) values ('$name','$pass','$age','$email','$gender','$country','$file')");
 $result = $cons -> query("select * from form");
                if(mysqli_num_rows($result) > 0){
                while($rows = $result -> fetch_object()){
@@ -60,6 +61,7 @@ $result = $cons -> query("select * from form");
                   $password = $rows -> password;
                   $gender = $rows -> gender;
                   $country = $rows -> country;
+                  $file=$rows->file;
                   echo "<tr>
                         <td>$id</td>
                         <td>$name</td>
@@ -68,6 +70,7 @@ $result = $cons -> query("select * from form");
                         <td>$password</td>
                         <td>$gender</td>
                         <td>$country</td>
+                        <td><a href='$file'>$name.jpg</a><td>
                   </tr>"; 
                }
                }else{
